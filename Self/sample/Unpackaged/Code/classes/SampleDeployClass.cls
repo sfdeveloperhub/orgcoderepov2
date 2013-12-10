@@ -15,8 +15,15 @@ public class SampleDeployClass {
     public static String getPhone() {
         return 'SamplePhone#';
     }
+
+    private static void insertmyObj(){
+        Myobj__c objInstance=new Myobj__c();
+        objInstance.Name='Test';
+        insert objInstance;
+    }
     
     public static void helloMethod() {
         System.debug('Hello World');
+        insertmyObj();
     }
 }
