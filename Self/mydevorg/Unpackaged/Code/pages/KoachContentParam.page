@@ -1,0 +1,9 @@
+<apex:page standardController="Koach_Content_Params__c">
+  <apex:form > 
+   <apex:pageBlock Title="Pre-Call Params">
+       <apex:inputField value="{!Koach_Content_Params__c.Koach_Brand__c}"/>
+       <apex:inputField value="{!Koach_Content_Params__c.Koach_Segmentation__c}"/>
+       <apex:inputField value="{!Koach_Content_Params__c.Koach_Call_Focus__c}"/>
+   </apex:pageBlock>
+  </apex:form>
+</apex:page>

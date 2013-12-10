@@ -1,0 +1,1121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Establishments for Accounts</description>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>true</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Account__c</fullName>
+        <description>Account related to the Establishment</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Link the Account to the Establishment</inlineHelpText>
+        <label>Account</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Establishments</relationshipLabel>
+        <relationshipName>Establishments</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <reparentableMasterDetail>false</reparentableMasterDetail>
+        <trackTrending>false</trackTrending>
+        <type>MasterDetail</type>
+        <writeRequiresMasterRead>false</writeRequiresMasterRead>
+    </fields>
+    <fields>
+        <fullName>Business_Structure_Code__c</fullName>
+        <description>Indicates if subject is a single location, headquarters or branch.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates if subject is a single location, headquarters or branch.</inlineHelpText>
+        <label>Business Structure Code</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Branch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Division</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Headquarter/Parent</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Single Location</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>City_Name__c</fullName>
+        <description>Name of the city where the establishment is located. Generally in the local language</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the city where the establishment is located. Generally in the local language</inlineHelpText>
+        <label>City Name</label>
+        <length>60</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>City_State__c</fullName>
+        <externalId>false</externalId>
+        <formula>TRIM(City_Name__c) &amp; &quot;, &quot; &amp;  TRIM( State_Province_Name__c )</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>City, State</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_Relationship__c</fullName>
+        <description>If the establishment has qualifying MIF under an active Xerox service agreement, then the Client_Relationship__c field shall be populated with the value &quot;Customer&quot;, else it shall be populated with the value &quot;Non Customer&quot;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A Customer is an establishment that has qualifying MIF under and active Xerox service agreement.</inlineHelpText>
+        <label>Client Relationship</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non Customer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Country_Code__c</fullName>
+        <description>2 character ISO Country code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>2 character ISO Country code</inlineHelpText>
+        <label>Country Code</label>
+        <length>2</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Country_Telephone_Access_Code__c</fullName>
+        <description>The international dialling code used to access the country phone system from outside the country.  Can be 1 to 3 digits.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The international dialling code used to access the country phone system from outside the country.  Can be 1 to 3 digits.</inlineHelpText>
+        <label>Country Telephone Access Code</label>
+        <length>3</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>County__c</fullName>
+        <description>The County__c field shall be populated with the name of the county the establishment is located in.</description>
+        <externalId>false</externalId>
+        <label>County</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Credit_Agency_ID__c</fullName>
+        <description>The Credit Agency ID (greydon/coface number)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Credit Agency ID (greydon/coface number)</inlineHelpText>
+        <label>Credit Agency ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Credit_Rating__c</fullName>
+        <description>The Credit_Rating__c field shall be populated with the credit rating, followed by a hyphen, followed by the credit rating description for the establishment.</description>
+        <externalId>false</externalId>
+        <label>Credit Rating</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Credit_Reason__c</fullName>
+        <description>The Credit_Reason__c field shall be populated with the reason associated with the Credit Rating.</description>
+        <externalId>false</externalId>
+        <label>Credit Reason</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Decision_Making_Location__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If the establishment is a Decision Making Location then the Decision_Making_Location__c field shall be populated with the numeric value of 1, else it shall be populated with the numeric value of 0.</description>
+        <externalId>false</externalId>
+        <label>Decision Making Location</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Dom_Ultimate_Duns_Number__c</fullName>
+        <description>D-U-N-S Number for the domestic ultimate, which is the highest family member in the same country as case business record as you walk up this ‘branch’ of the tree.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>DUNS number of ultimate parent company within the same country as business</inlineHelpText>
+        <label>Dom Ultimate Duns Number</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Duns_Number__c</fullName>
+        <description>A randomly generated nine-digit number assigned by D&amp;B to identify unique business establishments.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A randomly generated nine-digit number assigned by D&amp;B to identify unique business establishments.</inlineHelpText>
+        <label>Duns Number</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employees_Here__c</fullName>
+        <description>The number of employees at this location.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The number of employees at this location.</inlineHelpText>
+        <label>Employees Here</label>
+        <precision>7</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estab_Copy_Volume__c</fullName>
+        <externalId>false</externalId>
+        <label>Estab Copy Volume</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estab_Turnover__c</fullName>
+        <description>Revenue</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Revenue</inlineHelpText>
+        <label>Estab Turnover</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estab_White_Collar__c</fullName>
+        <description>Number of office staff</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of office staff</inlineHelpText>
+        <label>Estab White Collar</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Estab_page_volume__c</fullName>
+        <description>Page volume</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Page volume</inlineHelpText>
+        <label>Estab page volume</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Establishment_Class__c</fullName>
+        <description>The Establishment_Class__c field shall be populated with the Establishment Class of the establishment.</description>
+        <externalId>false</externalId>
+        <label>Establishment Class</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fax_number__c</fullName>
+        <description>The fax number of the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The fax number of the business.</inlineHelpText>
+        <label>Fax number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Franchise_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If the establishment is a Franchise then the Franchise_Indicator__c field shall be populated with the numeric value of 1, else it shall be populated with the numeric value of 0.</description>
+        <externalId>false</externalId>
+        <label>Franchise Indicator</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Global_Establishment_ID__c</fullName>
+        <description>CI  / ESOR unique establishment identifier</description>
+        <externalId>false</externalId>
+        <inlineHelpText>CI  / ESOR unique establishment identifier</inlineHelpText>
+        <label>Global Establishment ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Global_Ultimate_Duns_number__c</fullName>
+        <description>The D-U-N-S number of the upper most parent of a corporate family.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The D-U-N-S number of the upper most parent of a corporate family.</inlineHelpText>
+        <label>Global Ultimate Duns number</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Headquarter_Parent_Duns_number__c</fullName>
+        <description>DUNS Number of the Headquarters/Parent of the business location</description>
+        <externalId>false</externalId>
+        <inlineHelpText>DUNS Number of the Headquarters/Parent of the business location</inlineHelpText>
+        <label>Headquarter Parent Duns number</label>
+        <length>9</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hierarchy_Code__c</fullName>
+        <description>A one-position code, in conjunction with the status and subsidiary indicators that pinpoints the location of an establishment within a corporate hierarchy.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A one-position code, in conjunction with the status and subsidiary indicators that pinpoints the location of an establishment within a corporate hierarchy.</inlineHelpText>
+        <label>Hierarchy Code</label>
+        <length>1</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Industry_SIC_Desc__c</fullName>
+        <externalId>false</externalId>
+        <label>Industry SIC Desc</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Language__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>Language</inlineHelpText>
+        <label>Language</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Danish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dutch</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>English</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Finnish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Flemish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>French</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>German</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Greek</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Italian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Norwegian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Portuguese</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Spanish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Swedish</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Last_Contact_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Contact Date</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Last_Contact_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Last Contact Type</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Latitude__c</fullName>
+        <description>The Latitude__c field shal be populated with the latitude coordinate of the establishment.</description>
+        <externalId>false</externalId>
+        <label>Latitude</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Line_of_Business__c</fullName>
+        <description>SIC Code Description, describes the operations or activities of the business. It relates to the four-digit primary 1987 US Government SIC code</description>
+        <externalId>false</externalId>
+        <inlineHelpText>SIC Code Description, describes the operations or activities of the business. It relates to the four-digit primary 1987 US Government SIC code</inlineHelpText>
+        <label>Line of Business</label>
+        <length>240</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Local_Activity_Code_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Local Activity Code Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1972 SIC CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1987 SIC CODE                           </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2 DIGIT 1987 SIC CODE                  </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>3 DIGIT 1987 SIC CODE                  </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ASIA PACIFIC SIC CODE                  </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BELGIUM NACE CODE                      </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BELGIUM NACE CODE 2008                    </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CANADIAN D&amp;B SIC PLUS 4                </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CANADIAN GOVERNMENT SIC                </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CANADIAN GOVERNMENT SIC PLUS 4         </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DETAILED LEVEL ACTIVITY CODE           </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DNB HYLDAHL NACE                       </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>EUROPEAN NACE CODE                     </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FINNISH NACE CODE                      </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>FINNISH NACE REV2 CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HIGH LEVEL ACTIVITY CODE               </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ISIC                                   </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ITALY NACE CODE                         </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>MODERATE LEVEL ACTIVITY CODE           </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NACE REVISION 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NAF (NOMENCLATURE D&apos;ACTIVITE FRANCAISE)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NETHERLAND KVK ACTIVITY CODE           </fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NETHERLANDS NACE CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NETHERLANDS SBI 2008</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NORTH AMERICAN INDUSTRIAL CLSFN SYSTEM</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NORWEGIAN NACE CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>NORWEGIAN NACE CODE REV2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SBA CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SWEDEN NACE CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>UK FIVE DIGIT SIC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US D&amp;B SIC 2 PLUS 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US D&amp;B SIC PLUS 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US GOVERNMENT 2 DIGIT 1977 SIC CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US GOVERNMENT 3 DIGIT 1977 SIC CODE</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>US GOVT 1977 SIC (MODIFIED IN 1981)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DANISH Authority NACE Revision2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SWEDISH Authority NACE Revision2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Longitude__c</fullName>
+        <description>The Longitude__c field shal be populated with the longitude coordinate of the establishment.</description>
+        <externalId>false</externalId>
+        <label>Longitude</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>National_ID_System_Code__c</fullName>
+        <description>The code that identifies the type of National ID</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The code that identifies the type of National ID</inlineHelpText>
+        <label>National ID System Code</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Not Available</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>CRO</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Siren / Siret</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Charity Number</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Legacy identifier -Parent Company</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Country Created Siren</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>National_ID__c</fullName>
+        <description>Business identification number or code used in some countries for business registration and tax collection</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Business identification number or code used in some countries for business registration and tax collection</inlineHelpText>
+        <label>National ID</label>
+        <length>20</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Number_of_PC_Users__c</fullName>
+        <description>Number of PC users</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Number of PC users</inlineHelpText>
+        <label>Number of PC Users</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Office_Color_Acq__c</fullName>
+        <description>The Office_Color_Acq__c shall be populated with the Office Color Acquisition score for the establishment.</description>
+        <externalId>false</externalId>
+        <label>Office Color Acq</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Office_Mono_Acq__c</fullName>
+        <description>The Office_Mono_Acq__c  shall be populated with the Office Mono Acquisition score for the establishment.</description>
+        <externalId>false</externalId>
+        <label>Office Mono Acq</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Order_Taking_Territory__c</fullName>
+        <description>Report Taking Territory</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Report Taking Territory</inlineHelpText>
+        <label>Order Taking Territory</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_Credit_Agency_ID__c</fullName>
+        <description>Parent Credit agency number</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Credit Agency ID for Parent</inlineHelpText>
+        <label>Parent Credit Agency ID</label>
+        <length>10</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Postal_Code__c</fullName>
+        <description>Postal or zip code for the physical address location of the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Postal or zip code for the physical address location of the business.</inlineHelpText>
+        <label>Postal Code</label>
+        <length>60</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Potential_Copies__c</fullName>
+        <description>The Potential_Copies__c field shall be populated with the numeric value of the number of copies the establishment may potentially generate.</description>
+        <externalId>false</externalId>
+        <label>Potential Copies</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Potential_Prints__c</fullName>
+        <description>The Potential_Prints__c field shall be populated with the numeric value of the number of prints the establishment may potentially generate.</description>
+        <externalId>false</externalId>
+        <label>Potential Prints</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Previous_XRX_Order_Taking_Location__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If there is an order in ValueQuix that has been written and signed at this location then the Previous_XRX_Order_Taking_Location__c field shall be populated with the numeric value of 1, else it shall be populated with the numeric value of 0.</description>
+        <externalId>false</externalId>
+        <label>Previous XRX Order Taking Location </label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Primary_Local_Activity_Code__c</fullName>
+        <description>France only - local industry classification</description>
+        <externalId>false</externalId>
+        <inlineHelpText>France only - local industry classification</inlineHelpText>
+        <label>Primary Local Activity Code</label>
+        <length>8</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProFinance_ID__c</fullName>
+        <externalId>false</externalId>
+        <label>ProFinance ID</label>
+        <length>16</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prod_Color_Acq__c</fullName>
+        <description>The Prod_Color_Acq__c  shall be populated with the Production Color Acquisition score for the establishment.</description>
+        <externalId>false</externalId>
+        <label>Prod Color Acq</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Prod_Mono_Acq__c</fullName>
+        <description>The Prod_Mono_Acq__c  shall be populated with the Production Mono Acquisition score for the establishment.</description>
+        <externalId>false</externalId>
+        <label>Prod Mono Acq</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rollup_Account_ID__c</fullName>
+        <description>If the establishment is part of an account that has a Rollup Account ID in the SOR then the Rollup_Account_ID__c field shall be populated with this value.</description>
+        <externalId>false</externalId>
+        <label>Rollup Account ID</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Channel__c</fullName>
+        <description>The Sales_Channel__c field shall be populated with the abbreviation of the channel that covers the establishment.</description>
+        <externalId>false</externalId>
+        <label>Sales Channel</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Sales_Region__c</fullName>
+        <description>Region the establishment belongs to</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Region the establishment belongs to</inlineHelpText>
+        <label>Sales Region</label>
+        <length>100</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Secondary_Name__c</fullName>
+        <externalId>false</externalId>
+        <label>Secondary Name</label>
+        <length>80</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Source_System_ID__c</fullName>
+        <caseSensitive>true</caseSensitive>
+        <description>Legacy System Identifier</description>
+        <externalId>true</externalId>
+        <inlineHelpText>Legacy System Identifier</inlineHelpText>
+        <label>Source System ID</label>
+        <length>50</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>true</unique>
+    </fields>
+    <fields>
+        <fullName>State_Province_Name__c</fullName>
+        <description>Name of the state/province where the establishment is located</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Name of the state/province where the establishment is located</inlineHelpText>
+        <label>State Province Name</label>
+        <length>60</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street_Address_1__c</fullName>
+        <description>The physical street location of the business. Generally in local Language</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The physical street location of the business. Generally in local Language</inlineHelpText>
+        <label>Street Address 1</label>
+        <length>240</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Street_Address_2__c</fullName>
+        <description>The physical address line 2 of the the business. Generally in the local language</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The physical address line 2 of the the business. Generally in the local language</inlineHelpText>
+        <label>Street Address 2</label>
+        <length>240</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Subsidiary_Indicator__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates whether the business is a subsidiary or not</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates whether the business is a subsidiary or not</inlineHelpText>
+        <label>Subsidiary Indicator</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Telephone_Number__c</fullName>
+        <description>Telephone number for the business with no formatting or punctuation</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Telephone number for the business</inlineHelpText>
+        <label>Telephone Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Tradestyle_Name__c</fullName>
+        <description>The TradeStyle Or Seconday Name of the business, if used</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The TradeStyle Or Seconday Name of the business, if used</inlineHelpText>
+        <label>Tradestyle Name</label>
+        <length>150</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>US_1987_SIC1__c</fullName>
+        <description>Standard Industrial Classification. The primary SIC Code for the business.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Standard Industrial Classification. The primary SIC Code for the business.</inlineHelpText>
+        <label>US SIC Code</label>
+        <length>4</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>US_SIC_Code_Description__c</fullName>
+        <description>The US_1987_SIC1__Description_c field shall be populated with the SIC code description for the establishment.</description>
+        <externalId>false</externalId>
+        <label>US SIC Code Description</label>
+        <length>50</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>VAT_number__c</fullName>
+        <description>Value Added Tax number</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Value Added Tax number</inlineHelpText>
+        <label>VAT number</label>
+        <length>16</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Valid_Estab_Roles__c</fullName>
+        <description>Business Partner Role definition</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Business Partner Role definition</inlineHelpText>
+        <label>Roles</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Bill To</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Contract Party</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Equipment Rebate Recipient</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Payer</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Service Rebate Recipient</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ship To</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>X18_Digit_Establishment_ID__c</fullName>
+        <description>Custom formula field to get 18 digit Estab ID. It&apos;ll be used by Adminstrators for data massaging.</description>
+        <externalId>false</externalId>
+        <formula>Id
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,1,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,2,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,3,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,4,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,5,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,6,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,7,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,8,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,9,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,10,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)
+&amp; MID(&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ012345&quot;,(
+IF(FIND(MID(Id,11,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,1,0)
++IF(FIND(MID(Id,12,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,2,0)
++IF(FIND(MID(Id,13,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,4,0)
++IF(FIND(MID(Id,14,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,8,0)
++IF(FIND(MID(Id,15,1), &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;)&gt;0,16,0)
+)+1,1)</formula>
+        <label>18 Digit Establishment ID</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>XNAC5__c</fullName>
+        <description>The XNAC5__c field shall be populated with the 5 character XNAC of the account the establishment belongs to.</description>
+        <externalId>false</externalId>
+        <label>XNAC5</label>
+        <length>5</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Establishment</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>City_Name__c</columns>
+        <columns>NAME</columns>
+        <columns>Account__c</columns>
+        <columns>Source_System_ID__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Legal Business Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Establishments</pluralLabel>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Account__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>National_ID__c</searchFilterFields>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>

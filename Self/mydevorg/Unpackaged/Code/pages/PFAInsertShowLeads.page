@@ -1,0 +1,64 @@
+<!--
+Chad S Kelly & Prakash Prakash Ramaswamy
+March 2013
+-->
+
+<apex:page standardController="Lead" extensions="PFAInsertShowLeadsController"> 
+<apex:form >
+
+
+
+<apex:pageBlock >
+<apex:pageBlockButtons >
+<apex:commandButton action="{!saveandnew}" value="Insert" rerender="theRecentLeads" status="status"/>
+
+</apex:pageBlockButtons>
+
+<apex:pageBlockSection >
+<apex:inputField value="{!Lead.FirstName}"/>
+<apex:inputField value="{!Lead.LastName}"/>
+<apex:inputField value="{!Lead.Company}"/>
+<apex:inputfield value="{!Lead.Status}"/>
+<apex:inputfield value="{!Lead.City}"/>
+
+
+
+</apex:pageBlockSection>
+
+</apex:pageBlock>
+
+<apex:actionStatus id="status" Starttext="Partial Page Refreshing..." />
+
+<!--<apex:commandButton action="{!donothing}" value="Refresh" rerender="idToRerender"/>-->
+
+
+<apex:pageBlock title="Recently Created Leads" >
+    <apex:pageBlockTable value="{!leads}" var="l" id="theRecentLeads">
+        <apex:column value="{!l.Name}"/>
+        <apex:column value="{!l.Company}"/>
+        <apex:column value="{!l.Name}"/>
+        <apex:column value="{!l.Status}"/>
+        <apex:column value="{!l.CreatedDate}"/>
+    </apex:pageBlockTable>
+</apex:pageBlock>
+
+ 
+ <!-- Put some text here: <apex:inputText value="{!showInRerender}" />-->
+  
+ <!-- <apex:commandButton action="{!doNothing}" rerender="theRecentLeads" value="Rerender" status="status"/>-->
+
+
+<!--
+<apex:actionStatus startText=" (saving...)" stopText=" (done)" id="save-status"/>
+<apex:commandButton action="{!doNothing}" value="Save" status="save-status"/>
+
+
+ <apex:outputPanel id="idToRerender"> 
+  {!showInRerenderModified} 
+ </apex:outputPanel>
+
+
+-->
+
+</apex:form>  
+</apex:page>

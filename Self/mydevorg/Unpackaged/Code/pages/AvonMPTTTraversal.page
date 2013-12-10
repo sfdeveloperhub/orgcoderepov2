@@ -1,0 +1,13 @@
+<apex:page controller="AvonMPTTraversal" tabStyle="Avon_Genealogy__c">
+  <apex:form >
+  <apex:pageBlock title="Avon Genealogy Administration">
+    <apex:pageBlockSection title="Initial Load">
+      <apex:commandButton action="{!traverseTree}" value="Load Initial Identifiers"/>
+      <apex:commandButton action="{!populateEmptyRecords}" value="Load Null Identifiers Only"/>
+      <apex:commandButton action="{!resetLftRghtData}" value="Reset Data Left Right"/>
+     <apex:commandButton action="{!resetLftRghtGenealogy}" value="Reset Genealogy Left Right"/>
+    
+    </apex:pageBlockSection>
+  </apex:pageBlock>
+ </apex:form>
+</apex:page>

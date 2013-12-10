@@ -1,0 +1,31 @@
+<apex:page standardcontroller="Account" extensions="EsTabsDisplay">
+<apex:includeScript value="{!$Resource.jQuery_182_Minified}"/>
+ 
+ <script type="text/javascript">
+    jQuery.noConflict();
+    jQuery(document).ready(function(){
+	    jQuery("a").each(function(){
+	      jQuery(this).attr("target","_parent");
+	    });
+    });
+ </script>
+ 
+ <apex:form >
+ <apex:pageBlock >
+     <apex:pageBlockTable value="{!establishments}" var="establishment" rendered="{!(establishments.size>0)}">
+            
+            <apex:column value="{!establishment.Establishment__c}"/> 
+            <apex:column value="{!establishment.Establishment__r.City_Name__c}"/> 
+            <apex:column value="{!establishment.Establishment__r.Account__c}"/> 
+            <apex:column value="{!establishment.Establishment__r.Source_System_ID__c}"/> 
+
+        </apex:pageBlockTable> 
+        
+            <apex:outputText value="No records to display" rendered="{!(establishments.size==0)}"/>
+         
+         
+ </apex:pageBlock>
+  <apex:inputHidden value="{!account.Name}"/>
+  <apex:inputHidden value="{!account.OwnerId}"/>
+ </apex:form>
+</apex:page>
