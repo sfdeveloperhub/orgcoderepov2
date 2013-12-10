@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>ASSESSMENT - Stores basic assessment info</description>
+    <enableActivities>true</enableActivities>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>AccountPerson__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Account Person Relationship
+Delete Me</description>
+        <externalId>false</externalId>
+        <label>AccountPerson</label>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Assessments</relationshipLabel>
+        <relationshipName>Assessment_Junction</relationshipName>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Approval_Status__c</fullName>
+        <description>A field to track and manage approval status for assessments.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A field to track and manage approval status for assessments.</inlineHelpText>
+        <label>Approval Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending Approval</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Returned for Corrections</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Assessment_Date__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <description>The official date for this assessment.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The official date for this assessment.</inlineHelpText>
+        <label>Assessment Date</label>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Assessment_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Assessment Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>CANS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <description>A field to allow users to record descriptive information about the given assessment, including exception case details and brief thoughts/concerns.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A field to allow users to record descriptive information about the given assessment, including exception case details and brief thoughts/concerns.</inlineHelpText>
+        <label>Comments</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Interval__c</fullName>
+        <description>Interval for the assessment</description>
+        <externalId>false</externalId>
+        <label>Interval</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Intake</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Discharge</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Locked__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>A field to control whether or not an assessment has been submitted and locked, unlocked, etc.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>A field to control whether or not an assessment has been submitted and locked, unlocked, etc.</inlineHelpText>
+        <label>Locked</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Overall_Score__c</fullName>
+        <description>Calculated Score of the assessment</description>
+        <externalId>false</externalId>
+        <label>Overall Score</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Quarter__c</fullName>
+        <description>Indication of the numbered quarter this assessment describes.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indication of the numbered quarter this assessment describes.</inlineHelpText>
+        <label>Quarter</label>
+        <precision>4</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Open</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Locked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Re-opened</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Submitted__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Selected when Assessment is complete</description>
+        <externalId>false</externalId>
+        <label>Submitted</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>TFC_Family_Vistas__c</fullName>
+        <externalId>false</externalId>
+        <label>TFC/Family Vistas</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <label>Assessment</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>AccountPerson__c</columns>
+        <columns>Interval__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Assessment Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Assessments</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+    </searchLayouts>
+    <sharingModel>Private</sharingModel>
+    <validationRules>
+        <fullName>AssessmentQuarterValidation</fullName>
+        <active>true</active>
+        <description>A rule to make sure that if user selects &quot;quarterly&quot; in interval picklist that they are forced to enter a quarter number in field.</description>
+        <errorConditionFormula>ISPICKVAL( Interval__c , &apos;Quarterly&apos;) &amp;&amp;  ISBLANK( Quarter__c )</errorConditionFormula>
+        <errorDisplayField>Quarter__c</errorDisplayField>
+        <errorMessage>Quarter is required when &quot;Quarterly&quot; is selected from the Interval picklist.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>IntervalRequired</fullName>
+        <active>true</active>
+        <description>A rule to require selection of an interval for each new assessment.</description>
+        <errorConditionFormula>ISPICKVAL(  Interval__c , &apos;&apos;)</errorConditionFormula>
+        <errorMessage>You must select an Interval value to create a new assessment.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>TFC_Family_Vistas_Selection_Required</fullName>
+        <active>true</active>
+        <description>A validation rule that requires a selection be made from the TFC/Family Vistas picklist</description>
+        <errorConditionFormula>NOT(OR(ISPICKVAL( TFC_Family_Vistas__c , &apos;Yes&apos;) ,ISPICKVAL( TFC_Family_Vistas__c , &apos;No&apos;) ))</errorConditionFormula>
+        <errorDisplayField>TFC_Family_Vistas__c</errorDisplayField>
+        <errorMessage>A value must be selected for &quot;&quot;TFC / Family Vistas&quot;&quot; when completing an assessment.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Print_Assessment</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Print Assessment</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/apex/PDF_Assessment_CANS_Scoresheet?id={!Assessment__c.Id}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>View_Assessment</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <height>600</height>
+        <linkType>url</linkType>
+        <masterLabel>View Assessment</masterLabel>
+        <openType>sidebar</openType>
+        <protected>false</protected>
+        <url>/apex/AssessmentForm?id={!Assessment__c.Id}</url>
+    </webLinks>
+</CustomObject>
